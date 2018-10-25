@@ -1,0 +1,56 @@
+{
+  "name": "twoot-server",
+  "version": "1.0.0",
+  "description": "A simple Twitter clone.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node ./src/index.js",
+    "build": "babel src -d dist",
+    "serve": "node ./dist/index.js",
+    "test": "jest --runInBand",
+    "coverage": "jest --runInBand --coverage"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "express": "^4.16.4",
+    "express-graphql": "^0.6.12",
+    "express-jwt": "^5.3.1",
+    "graphql": "^14.0.2",
+    "pg": "^7.5.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.41.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "eslint": "^5.7.0",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.4",
+    "prettier": "^1.14.3",
+    "sequelize-cli": "^5.2.0",
+    "sinon": "^7.0.0"
+  },
+  "jest": {
+    "moduleDirectories": [
+      "src",
+      "node_modules"
+    ],
+    "coverageDirectory": "<rootDir>/coverage",
+    "collectCoverageFrom": [
+      "**/*.{js}",
+      "!**/node_modules/**",
+      "!**/dist/**"
+    ],
+    "coverageReporters": [
+      "lvoc",
+      "text",
+      "text-summary"
+    ]
+  }
+}
