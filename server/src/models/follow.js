@@ -3,23 +3,17 @@ const follow = (sequelize, DataTypes) => {
   const Follow = sequelize.define('follow', {
     follower: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      unique: 'follower_by_followed'
+      allowNull: false
     },
     followed: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      unique: 'follower_by_followed'
+      allowNull: false
     }
   }, {
     indexes: [{
       fields: ['follower']
     }, {
       fields: ['followed']
-    }, {
-      unique: true,
-      fields: ['follower', 'followed'],
-      name: 'follower_by_followed'
     }]
   })
 

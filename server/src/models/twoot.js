@@ -1,7 +1,7 @@
 /* eslint-disable-next-line max-lines-per-function */
 const twoot = (sequelize, DataTypes) => {
   const Twoot = sequelize.define('twoot', {
-    content: {
+    body: {
       type: DataTypes.TEXT,
       allowNull: true,
       validate: {
@@ -10,16 +10,6 @@ const twoot = (sequelize, DataTypes) => {
           msg: 'twootTooLong'
         }
       }
-    },
-    retwootsCount: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0
-    },
-    likesCount: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0
     },
     retwootOf: {
       type: DataTypes.INTEGER,

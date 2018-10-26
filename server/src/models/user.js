@@ -1,6 +1,6 @@
+/* eslint-disable max-lines-per-function */
 import bcrypt from 'bcrypt'
 
-/* eslint-disable-next-line max-lines-per-function */
 const user = (sequelize, DataTypes) => {
   const User = sequelize.define('user', {
     username: {
@@ -39,16 +39,6 @@ const user = (sequelize, DataTypes) => {
           msg: 'passwordEmpty'
         }
       }
-    },
-    followedCount: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0
-    },
-    followersCount: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0
     }
   }, {
     indexes: [{
@@ -67,7 +57,6 @@ const user = (sequelize, DataTypes) => {
     }
   })
 
-  /* eslint-disable-next-line max-lines-per-function */
   User.associate = (models) => {
     models.User.hasMany(models.Twoot, {
       foreignKey: 'user',

@@ -1,25 +1,19 @@
 /* eslint-disable-next-line max-lines-per-function */
 const like = (sequelize, DataTypes) => {
   const Like = sequelize.define('like', {
-    follower: {
+    twoot: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      unique: 'follower_by_followed'
+      allowNull: false
     },
-    followed: {
+    user: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      unique: 'follower_by_followed'
+      allowNull: false
     }
   }, {
     indexes: [{
-      fields: ['follower']
+      fields: ['twoot']
     }, {
-      fields: ['followed']
-    }, {
-      unique: true,
-      fields: ['follower', 'followed'],
-      name: 'follower_by_followed'
+      fields: ['user']
     }]
   })
 

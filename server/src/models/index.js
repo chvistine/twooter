@@ -1,12 +1,23 @@
 import Sequelize from 'sequelize'
+import config from 'sequelizeConfig'
 
-const sequelize = new Sequelize()
+const sequelize = new Sequelize(
+  config.db,
+  config.username,
+  config.password,  
+  config
+)
 
 const models = {
-  Author: sequelize.import('./author')
+  User: sequelize.import('./user'),
+  Twoot: sequelize.import('./twoot'),
+  Follow: sequelize.import('./follow'),
+  Like: sequelize.import('./like')
 }
 
-models.map(model => {
+Object.keys(models).map(key => {
+  let model = models[key]
+
   if (model.associate) {
     model.associate(models)
   }
