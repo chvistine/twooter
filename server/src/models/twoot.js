@@ -1,4 +1,4 @@
-/* eslint-disable-next-line max-lines-per-function */
+/* eslint-disable max-lines-per-function */
 const twoot = (sequelize, DataTypes) => {
   const Twoot = sequelize.define('twoot', {
     body: {

@@ -1,4 +1,4 @@
-/* eslint-disable-next-line max-lines-per-function */
+/* eslint-disable max-lines-per-function */
 const follow = (sequelize, DataTypes) => {
   const Follow = sequelize.define('follow', {
     follower: {

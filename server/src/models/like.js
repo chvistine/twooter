@@ -1,4 +1,4 @@
-/* eslint-disable-next-line max-lines-per-function */
+/* eslint-disable max-lines-per-function */
 const like = (sequelize, DataTypes) => {
   const Like = sequelize.define('like', {
     twoot: {
