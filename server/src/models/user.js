@@ -59,7 +59,7 @@ const user = (sequelize, DataTypes) => {
 
   User.associate = (models) => {
     models.User.hasMany(models.Twoot, {
-      foreignKey: 'user',
+      foreignKey: 'authorID',
       as: 'twoots'
     })
 
@@ -78,10 +78,10 @@ const user = (sequelize, DataTypes) => {
     })
 
     models.User.belongsToMany(models.Twoot, {
-      as: 'likes',
+      as: 'liked',
       through: models.Like,
-      foreignKey: 'user',
-      otherKey: 'twoot'
+      foreignKey: 'userID',
+      otherKey: 'twootID'
     })
   }
 

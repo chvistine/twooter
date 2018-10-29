@@ -17,7 +17,6 @@
         }],
         "semi": ["error","never"],
         "complexity": ["error", 5],
-        "valid-jsdoc": "error",
         "eqeqeq": "error",
         "no-param-reassign": "error",
         "no-undefined": "error",

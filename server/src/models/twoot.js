@@ -18,10 +18,20 @@ const twoot = (sequelize, DataTypes) => {
     authorID: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    likesCount: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    },
+    retwootsCount: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
     }
   }, {
     indexes: [{
-      fields: ['user']
+      fields: ['authorID']
+    }, {
+      fields: ['parentTwootID']
     }]
   })
 
@@ -41,6 +51,13 @@ const twoot = (sequelize, DataTypes) => {
     models.Twoot.hasMany(models.Twoot, {
       foreignKey: 'parentTwootID',
       as: 'retwoots'
+    })
+
+    models.Twoot.belongsToMany(models.User, {
+      as: 'likes',
+      through: models.Like,
+      foreignKey: 'twootID',
+      otherKey: 'userID'
     })
   }
 

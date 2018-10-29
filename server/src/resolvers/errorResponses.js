@@ -12,12 +12,17 @@ const errorStatus = (error) => {
 
 export const errorResponse = (error) => {
   const status = errorStatus(error)
+  let entries = error.errors
+
+  if (!entries) {
+    entries = [{ message: error.message }]
+  }
 
   return {
     status: status,
     requestErrors: {
       name: error.name,
-      entries: error.errors
+      entries: entries
     }
   }
 }
