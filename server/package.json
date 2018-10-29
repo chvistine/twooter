@@ -14,10 +14,13 @@
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^3.0.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
     "express": "^4.16.4",
     "express-graphql": "^0.6.12",
     "express-jwt": "^5.3.1",
     "graphql": "^14.0.2",
+    "jsonwebtoken": "^8.3.0",
     "pg": "^7.5.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.41.0"
@@ -50,7 +53,7 @@
       "!**/dist/**"
     ],
     "coverageReporters": [
-      "lvoc",
+      "lcov",
       "text",
       "text-summary"
     ]

@@ -7,14 +7,6 @@ const errorStatus = (error) => {
     return 409
   }
 
-  if (error.name === 'InvalidCredentials') {
-    return 401
-  }
-
-  if (error.name === 'NoCurrentUser') {
-    return 404
-  }
-
   return 500
 }
 

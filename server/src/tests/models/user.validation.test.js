@@ -36,13 +36,9 @@ describe('User model', () => {
           password: 'password'
         }
 
-        try {
-          const created = await models.User.create(user)
-          expect(created).not.toEqual(undefined)
-          expect(created.username).toEqual('username')
-        } catch (error) {
-          expect(error).toEqual(undefined)
-        }
+        const created = await models.User.create(user)
+        expect(created).not.toEqual(undefined)
+        expect(created.username).toEqual('username')
       }) 
     })
 

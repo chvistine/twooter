@@ -35,12 +35,8 @@ describe('User model', () => {
         password: 'password'
       }
 
-      try {
-        const created = await models.User.create(user)
-        expect(created.username).toEqual('username')
-      } catch (error) {
-        expect(error).toEqual(undefined)
-      }
+      const created = await models.User.create(user)
+      expect(created.username).toEqual('username')
     })
 
     it('Sets the username with original case as the display username', async () => {
@@ -51,12 +47,8 @@ describe('User model', () => {
         password: 'password'
       }
 
-      try {
-        const created = await models.User.create(user)
-        expect(created.displayUsername).toEqual('UserName')
-      } catch (error) {
-        expect(error).toEqual(undefined)
-      }
+      const created = await models.User.create(user)
+      expect(created.displayUsername).toEqual('UserName')
     })
 
     it('Hashes the password', async () => {
@@ -67,12 +59,8 @@ describe('User model', () => {
         password: 'password'
       }
 
-      try {
-        const created = await models.User.create(user)
-        expect(created.password).not.toEqual('password')
-      } catch (error) {
-        expect(error).toEqual(undefined)
-      }
+      const created = await models.User.create(user)
+      expect(created.password).not.toEqual('password')
     })
   })
 })

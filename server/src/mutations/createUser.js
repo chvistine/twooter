@@ -9,7 +9,8 @@ const createUser = {
   name: 'createUser',
   args: {
     input: {
-      type: userInputType
+      type: userInputType,
+      description: 'The username and password for the user.'
     }
   },
   resolve: createUserResolver

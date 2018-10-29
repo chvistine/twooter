@@ -39,17 +39,13 @@ describe('Twoot model', () => {
 
         const twoot = {
           body: 'This is a test twoot.',
-          user: user.id
+          authorID: user.id
         }
 
-        try {
-          const created = await models.Twoot.create(twoot)
-          expect(created).not.toEqual(undefined)
-          expect(created.body).toEqual('This is a test twoot.')
-          expect(created.user).toEqual(user.id)
-        } catch (error) {
-          expect(error).toEqual(undefined)
-        }
+        const created = await models.Twoot.create(twoot)
+        expect(created).not.toEqual(undefined)
+        expect(created.body).toEqual('This is a test twoot.')
+        expect(created.user).toEqual(user.id)
       })
     })
 
@@ -59,7 +55,7 @@ describe('Twoot model', () => {
 
         const twoot = {
           body: 'This is a test twoot.'.repeat(200),
-          user: user.id
+          authorID: user.id
         }
 
         try {

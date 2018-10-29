@@ -22,7 +22,7 @@
         "no-param-reassign": "error",
         "no-undefined": "error",
         "max-lines-per-function": ["error", {
-          "max": 15,
+          "max": 40,
           "skipBlankLines": true,
           "skipComments": true
         }],

@@ -11,11 +11,11 @@ const twoot = (sequelize, DataTypes) => {
         }
       }
     },
-    retwootOf: {
+    parentTwootID: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    user: {
+    authorID: {
       type: DataTypes.INTEGER,
       allowNull: false
     }
@@ -27,14 +27,19 @@ const twoot = (sequelize, DataTypes) => {
 
   Twoot.associate = (models) => {
     models.Twoot.belongsTo(models.User, {
-      foreignKey: 'user',
+      foreignKey: 'authorID',
       as: 'author',
       onDelete: 'cascade',
       hooks: true
     })
 
+    models.Twoot.belongsTo(models.Twoot, {
+      foreignKey: 'parentTwootID',
+      as: 'parentTwoot'
+    })
+
     models.Twoot.hasMany(models.Twoot, {
-      foreignKey: 'retwootOf',
+      foreignKey: 'parentTwootID',
       as: 'retwoots'
     })
   }
